@@ -5,17 +5,20 @@ import Home from './pages/home/Home';
 import Appointments from './pages/appointments/Appointments';
 import Cavities from './pages/cavities/Cavities';
 import Navigation from './components/navigation/Navigation';
+import {Route, Routes} from "react-router-dom";
 
 function App() {
-  return (
-    <>
-      <Navigation />
-      <Home />
-      <Whitening />
-      <Appointments />
-      <Cavities />
-    </>
-  );
+    return (
+        <>
+            <Navigation/>
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/tanden-bleken" element={<Whitening/>}/>
+                <Route path="/afspraken" element={<Appointments/>}/>
+                <Route path="/gaatjes" element={<Cavities/>}/>
+            </Routes>
+        </>
+    );
 }
 
 export default App;
